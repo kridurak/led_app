@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "ZTE-GP36AA";        // SSID - router name
-const char* password = "pkpsbtccedv9";  // WiFi - password
+const char* ssid = "";        // SSID - router name
+const char* password = "";  // WiFi - password
 int ledPin = 4; //LED_BUILTIN
 // Auxiliar variables to store the current output state
 String ledStatus = "off";
@@ -137,49 +137,3 @@ void loop() {
     Serial.println("");
   }
 }
-//  // Wait until the client sends some data
-//  Serial.println("new client");
-//  while (!client.available()) {
-//    delay(1);
-//  }
-//  // Read the first line of the request
-//  String request = client.readStringUntil('\r');
-//  Serial.println(request);
-//  client.flush();
-//  // Match the request
-//  int value = LOW;
-//  if (request.indexOf("/LED=ON") != -1) {
-//    digitalWrite(ledPin, LOW);
-//    value = HIGH;
-//  }
-//  if (request.indexOf("/LED=OFF") != -1) {
-//    digitalWrite(ledPin, HIGH);
-//    value = LOW;
-//  }
-//  // Set ledPin according to the request
-//  //digitalWrite(ledPin, value);
-//  // Return the response
-//  client.println("HTTP/1.1 200 OK");
-//  client.println("Content-Type: text/html");
-//  client.println(""); // do not forget this one
-//  client.println("<!DOCTYPE HTML>");
-//  client.println("<html>");
-//  client.println("<style>html{font-familt: Arial, Helvetica, sans-serif;} h1{text-align: center;font-size: 20vw;} .block {border-radius: 30px;font-size: 20vw;display: block;width: 100%;border: none;background-color: #2196F3;padding: 100px;cursor: pointer;text-align: center;} a{text-decoration: none;}</style>");
-//  client.print("<h1>Svetlo ");
-//  if (value == LOW) {
-//    client.print("je zhasnute!</h1>");
-//  } else {
-//    client.print("svieti!</h1>");
-//  }
-//  // HTML for buttons to work LED
-//  client.println("<br><br>");
-//  if (value == LOW) {
-//    client.println("<a href=\"/LED=ON\"\"><button type='button' class='block'>Zapnut </button></a><br />");
-//  } else {
-//    client.println("<a href=\"/LED=OFF\"\"><button type='button' class='block'>Vypnut </button></a>");
-//  }
-//  client.println("</html>");
-//  delay(1);
-//  Serial.println("Client disconnected");
-//  Serial.println("");
-//}
